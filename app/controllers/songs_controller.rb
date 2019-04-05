@@ -30,8 +30,8 @@ class SongsController < ApplicationController
       @artist = Artist.find_by(id: params["artist_id"] )
       if !@artist
         redirect_to '/artists'
-      else
-        @song = @artist.songs.build
+      else 
+        @song = @artist.songs.build  
       end
     end
   end
@@ -54,10 +54,10 @@ class SongsController < ApplicationController
 
   def edit
     @song = Song.find_by(id: params[:id])
-    if !!params["artist"]
-      @artist = @song.artist
+    if !!params["artist_id"]
+      @artist = Artist.find_by(id: params["id"])
       if !@artist
-        redirect_to '/artists'
+        redirect_to artists_path
       elsif @song.artist != @artist
         redirect_to artist_songs_path(@artist)
       end
