@@ -50,7 +50,7 @@ class SongsController < ApplicationController
       @artist = @song.artist
       if !@artist
         redirect_to '/artists'
-      elsif @song.artists != @artist
+      elsif @song.artist != @artist
         redirect_to artist_songs_path(@artist)
       end
     else
