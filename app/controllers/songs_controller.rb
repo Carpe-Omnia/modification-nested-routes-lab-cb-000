@@ -58,7 +58,7 @@ class SongsController < ApplicationController
       @artist = Artist.find_by(id: params["artist_id"])
       if @artist == nil
         redirect_to artists_path
-      elsif @song.artist != @artist
+      elsif !@artists.songs.include?(@artist)
         redirect_to artist_songs_path(@artist)
       end
     else
