@@ -30,8 +30,8 @@ class SongsController < ApplicationController
       @artist = Artist.find_by(id: params["artist_id"] )
       if !@artist
         redirect_to '/artists'
-      else 
-        @song = @artist.songs.build  
+      else
+        @song = @artist.songs.build
       end
     end
   end
