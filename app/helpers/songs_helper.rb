@@ -4,7 +4,9 @@ module SongsHelper
     if !!artist
       artist.name
     else
-      collection_select :artist_id, Artist.all, :id, :name
+      form_for @song do |f|
+        f.collection_select :artist_id, Artist.all, :id, :name
+      end
     end
   end
 
