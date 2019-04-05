@@ -39,8 +39,8 @@ class SongsController < ApplicationController
   def create
     if !!params["artist_id"]
       @artist = Artist.find_by(id: params["id"])
-      if  !@artist
-        redirect_to '/artists'
+      if  @artist == nil
+        redirect_to artists_path
       end
     end
     @song = Song.new(song_params)
