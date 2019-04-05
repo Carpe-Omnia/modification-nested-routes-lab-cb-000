@@ -1,11 +1,11 @@
 module SongsHelper
 
-  def artist_select(artist) 
-    if !!artist 
+  def artist_select(artist)
+    if !!artist
       <strong>artist.name</strong>
-    else 
-      Artist.all 
-    end 
-  end 
-        
+    else
+      Artist.all
+    end
+  end
+
 end
