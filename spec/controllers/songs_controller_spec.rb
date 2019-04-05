@@ -16,7 +16,7 @@ RSpec.describe SongsController do
     end
 
     it "validates artist when nested route" do
-      get :new, artist_id: 123123
+      get :new, params: {artist_id: 123123}
       expect(response).to redirect_to artists_path
     end
   end
