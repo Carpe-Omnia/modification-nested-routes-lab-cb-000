@@ -11,7 +11,7 @@ RSpec.describe SongsController do
 
   describe "GET new" do
     it "sets artist when nested route" do
-      get :new, artist_id: @artist.id
+      get :new, params: {artist_id: @artist.id}
       expect(assigns(:song).artist_id).to eq @artist.id
     end
 
