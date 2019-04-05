@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '5.2.2'
+gem 'rails'
 gem 'sqlite3'
 gem 'sass-rails'
 gem 'uglifier'
