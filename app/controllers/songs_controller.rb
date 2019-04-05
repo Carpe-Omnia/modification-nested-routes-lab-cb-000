@@ -48,6 +48,11 @@ class SongsController < ApplicationController
     @song = Song.find(params[:id])
     if !!params["artist"]
       @artist = @song.artist
+      if !@artist
+        redirect_to '/artists'
+      elsif @song.artists != @artist
+        redirect_to artist_songs_path(@artist)
+      end
     else
       @artist = nil
     end
