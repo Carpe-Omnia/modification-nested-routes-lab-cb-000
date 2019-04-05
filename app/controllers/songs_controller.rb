@@ -29,7 +29,7 @@ class SongsController < ApplicationController
     if !!params["artist_id"]
       @artist = Artist.find_by(id: params["artist_id"] )
       if !@artist
-        redirect_to artists_path(Artist.all)
+        redirect_to '/artists'
       end
     end
   end
