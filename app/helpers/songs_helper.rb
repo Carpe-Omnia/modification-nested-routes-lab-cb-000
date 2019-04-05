@@ -1,6 +1,6 @@
 module SongsHelper
 
-  def artist_select(artist)
+  def artist_select(artist, song)
     if !!artist
       artist.name
     else
